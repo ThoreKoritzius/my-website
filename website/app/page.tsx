@@ -6,6 +6,28 @@ export const metadata = {
   description: "Seasoned ML Software Engineer specializing in designing, optimizing, and deploying real-time, scalable AI systems—spanning LLMs, retrieval pipelines, and multimodal architectures—to deliver robust, production-ready solutions.",
 };
 
+type IconLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+};
+
+type BadgeProps = {
+  children: React.ReactNode;
+};
+type Project = {
+  id: string;
+  title: string;
+  summary: string;
+  link: string;
+  img: string;
+  tags?: string[];
+  long?: string;
+};
+
+type ProjectCardProps = {
+  p: Project;
+};
 
 const PROJECTS = [
   {
@@ -14,10 +36,9 @@ const PROJECTS = [
     summary: 'A Text2SQL Text-Diffusion-LLM including training and playground inference',
     link: 'https://github.com/ThoreKoritzius/diffusion-llm',
     img: '/projects/diffusion_example.gif',
-    tags: ['PyTorch', 'Inference', 'Diffusion'],
+    tags: ['PyTorch', 'Inference', 'Diffusion', 'Research'],
     long: `A Text2SQL Text-Diffusion-LLM including training and playground inference`
   },
-  ,
   {
     id: 'graphl-mcp',
     title: 'GraphQL MCP Server',
@@ -33,7 +54,7 @@ const PROJECTS = [
     summary: 'Real-Time AI Data Agent: Upload a CSV - Talk to your live Analyst. Streams live graphs, voice results, and transcripts. Runs complex tasks—like stance annotation—updating Google Sheets in real time. 1st place, Berlin AI Hackathon.',
     link: 'https://github.com/meng2468/my-analyst-hack',
     img: '/projects/yde.png',
-    tags: ['Voice-Agent', 'Realtime-ML-Inference', 'Agentic', 'Data Engineering'],
+    tags: ['Voice-Agent', 'Realtime-ML-Inference', 'Agentic'],
     long: `Real-Time AI Data Agent: Upload a CSV - Talk to your live Analyst. Streams live graphs, voice results, and transcripts. Runs complex tasks—like stance annotation—updating Google Sheets in real time. 1st place, Berlin AI Hackathon.`
   },
   {
@@ -44,6 +65,15 @@ const PROJECTS = [
     img: '/projects/worldbummlr.png',
     tags: ['Agentic ML', 'Data Engineering', 'SQL', 'Flutter'],
     long: `Explore cities via a Real-Time AI-Generated Tour-Guide telling stories, building routes and real-time audio.`
+  },
+  {
+    id: 'neuron-surgery',
+    title: 'Autoencoder for LLM Feature Extraction',
+    summary: 'Autoencoder-based approach for "neuron surgery" on LLMs: extract and amplify neuron features linked to specific topics (e.g., SQL generation), enabling targeted personality shifts by boosting activations at inference time.',
+    link: 'https://github.com/ThoreKoritzius/llm-surgery',
+    img: '/projects/neuron_surgery.png',
+    tags: ['PyTorch', 'Autoencoder', 'Research'],
+    long: 'Autoencoder-based approach for "neuron surgery" on LLMs: extract and amplify neuron features linked to specific topics (e.g., SQL generation), enabling targeted personality shifts by boosting activations at inference time.',
   }
 ]
 
@@ -61,67 +91,46 @@ const PAPERS = [
 // -----------------------
 // COMPONENTS
 // -----------------------
-function IconLink({ href, children, className = '' }) {
+function IconLink({ href, children, className = '' }: IconLinkProps) {
   return (
     <a href={href} className={`inline-flex items-center gap-2 py-2 px-3 rounded-lg border transition hover:scale-[1.02] ${className}`} target="_blank" rel="noreferrer">
       {children}
     </a>
-  )
+  );
 }
 
-function Badge({ children }) {
-  return <span className="text-xs px-2 py-1 rounded-full border">{children}</span>
+function Badge({ children }: BadgeProps) {
+  return <span className="text-xs px-2 py-1 rounded-full border">{children}</span>;
 }
-
-function ProjectCard({ p }) {
+function ProjectCard({ p }: ProjectCardProps) {
   return (
-    <article className="group bg-white/5 border border-white/6 overflow-hidden shadow-sm">
+    <article className="group bg-white/5 border border-white/6 overflow-hidden shadow-sm flex flex-col">
       <div className="relative h-44 w-full bg-gray-900/40">
-        {/* Image - put GIFs or PNGs in /public/images */}
         <Image src={p.img} alt={p.title} fill style={{ objectFit: 'cover' }} />
       </div>
-      <div className="p-4">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h3 className="text-lg font-semibold">{p.title}</h3>
-            <p className="text-sm mt-1 text-gray-300">{p.summary}</p>
-          </div>
+      <div className="flex flex-col flex-1 p-4">
+        {/* Card content */}
+        <div>
+          <h3 className="text-lg font-semibold">{p.title}</h3>
+          <p className="text-sm mt-1 text-gray-300">{p.summary}</p>
         </div>
-        <div className="mt-4 flex items-center justify-between gap-3">
-          <div className="flex gap-2">{p.tags?.map(t => <Badge key={t}>{t}</Badge>)}</div>
+        {/* Tags + Open link pinned to bottom */}
+        <div className="mt-auto flex items-center justify-between gap-3 pt-4">
           <div className="flex gap-2">
-            <a href={p.link} target="_blank" rel="noreferrer" className="text-sm px-3 py-2 border rounded-lg">Open</a>
+            {p.tags?.map(t => <Badge key={t}>{t}</Badge>)}
+          </div>
+          <div className="flex gap-2">
+            <a
+              href={p.link}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm px-3 py-2 border rounded-lg"
+            >Open</a>
           </div>
         </div>
       </div>
     </article>
-  )
-}
-
-// Simple modal for project details
-function Modal({ item, onClose }) {
-  if (!item) return null
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
-      <div className="absolute inset-0 bg-black/60" onClick={onClose} />
-      <div className="relative z-10 max-w-3xl w-full bg-neutral-900 rounded-2xl overflow-hidden border p-6">
-        <div className="flex items-start gap-4">
-          <div className="w-40 h-28 relative rounded overflow-hidden">
-            <Image src={item.img} alt={item.title} fill style={{ objectFit: 'cover' }} />
-          </div>
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold">{item.title}</h2>
-            <p className="mt-2 text-gray-300">{item.summary}</p>
-            <div className="mt-4 text-sm whitespace-pre-wrap font-mono bg-black/10 p-3 rounded">{item.long}</div>
-            <div className="mt-4 flex gap-2">
-              <a href={item.link} target="_blank" rel="noreferrer" className="px-3 py-2 border rounded">Open repo</a>
-              <button onClick={onClose} className="px-3 py-2 border rounded">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+  );
 }
 
 // -----------------------
