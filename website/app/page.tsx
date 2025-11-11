@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { PAPERS, PROJECTS } from './consts';
 import ReactMarkdown from 'react-markdown';
-
+import './globals.css';
 export const metadata = {
   title: "Thore Koritzius",
   description: "Seasoned ML Software Engineer specializing in designing, optimizing, and deploying real-time, scalable AI systems—spanning LLMs, retrieval pipelines, and multimodal architectures—to deliver robust, production-ready solutions.",
@@ -86,7 +86,7 @@ export default function HomePage() {
         <header className="flex items-start justify-between gap-6">
           <div>
             <h1 className="text-4xl font-extrabold">Thore Koritzius</h1>
-            <p className="mt-2 text-gray-300">ML Software Engineer specializing in designing, optimizing, and deploying real-time, scalable AI systems—spanning LLMs, retrieval pipelines, and multimodal architectures.</p>
+            <p className="mt-2 text-gray-300">Machine Learning Software Engineer<br></br>Love designing, optimizing, and deploying real-time, scalable AI systems. Spanning LLMs, retrieval pipelines, and multimodal architectures.</p>
             <div className="mt-4 flex gap-3">
               <IconLink href="https://www.linkedin.com/in/thorekoritzius">
                 {/* LinkedIn SVG */}
@@ -98,9 +98,6 @@ export default function HomePage() {
                 <span>GitHub</span>
               </IconLink>
             </div>
-          </div>
-          <div className="hidden md:flex flex-col items-end text-right">
-            <p className="text-xs text-gray-400">Based in Germany</p>
           </div>
         </header>
 

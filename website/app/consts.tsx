@@ -6,7 +6,7 @@ export const PROJECTS = [
         summary: 'A Text2SQL Text-Diffusion-LLM including training and playground inference',
         link: 'https://github.com/ThoreKoritzius/diffusion-llm',
         img: '/projects/diffusion_example.gif',
-        tags: ['PyTorch', 'Inference', 'Diffusion', 'Research'],
+        tags: ['PyTorch', 'Diffusion', 'Research'],
         long: `A Text2SQL Text-Diffusion-LLM including training and playground inference`
     },
     {
@@ -15,7 +15,7 @@ export const PROJECTS = [
         summary: 'GraphQL MCP server enabling dynamic, elastic type discovery with type dependency trees and optimized discovery pipelines, designed for advanced agent-driven workflows.',
         link: 'https://github.com/ThoreKoritzius/graphql-mcp',
         img: '/projects/graphql_mcp_results.png',
-        tags: ['Rust', 'MCP'],
+        tags: ['Rust', 'MCP', 'GraphQL'],
         long: `GraphQL MCP server enabling dynamic, elastic type discovery with type dependency trees and optimized discovery pipelines, designed for advanced agent-driven workflows.`
     },
     {
@@ -33,7 +33,7 @@ export const PROJECTS = [
         summary: 'Explore cities via a Real-Time AI-Generated Tour-Guide telling stories, building routes and real-time audio.',
         link: 'https://worldbummlr.com',
         img: '/projects/worldbummlr.png',
-        tags: ['Agentic ML', 'Data Engineering', 'SQL', 'Flutter'],
+        tags: ['Agentic ML', 'Data Engineering', 'Flutter'],
         long: `Explore cities via a Real-Time AI-Generated Tour-Guide telling stories, building routes and real-time audio.`
     },
     {
@@ -51,7 +51,61 @@ export const PROJECTS = [
         summary: 'Small, on-device CNN image-classificaiton in Flutter via onnx',
         link: 'https://github.com/ThoreKoritzius/onnx-cnn-flutter',
         img: '/projects/flutter_onnx.png',
-        tags: ['ONNX', 'Client-Side-Inference'],
+        tags: ['ONNX', 'Client-Side-Inference', 'Flutter'],
+        long: 'Small, on-device CNN image-classificaiton in Flutter via onnx',
+    },
+    {
+        id: 'raytracing',
+        title: 'Raytracing in Optical Fibers',
+        summary: 'Physical Ray Tracing Simualtion for curved optical fibers in Matlab',
+        link: '',
+        img: '/projects/raytracing.jpg',
+        tags: ['Raytracing', 'Matlab'],
+        long: 'Physical Ray Tracing Simualtion for curved optical fibers in Matlab',
+    },
+    {
+        id: 'recipe-tracker',
+        title: 'Image Similarity Recipe Lookup',
+        summary: 'Get similar recepies given a picture',
+        link: '',
+        img: '/projects/recipe.jpg',
+        tags: ['Auto-Encoder', 'Embedding Model'],
+        long: 'Get similar recepies given a picture',
+    },
+    {
+        id: 'brainchess',
+        title: 'Chess via an EEG',
+        summary: 'Play chess just by thinking about the moves with consumer-grade EEG. Works by thinking of binary start and end position of moves, translated to chess coordinates.',
+        link: '',
+        img: '/projects/brainchess.jpg',
+        tags: ['EEG', 'Signal Processing'],
+        long: 'Play chess just by thinking about the moves with consumer-grade EEG. Works by thinking of binary start and end position of moves, translated to chess coordinates.',
+    },
+    {
+        id: 'news-analyis',
+        title: 'Real-Time News and Twitter Sentiment Topic Analysis',
+        summary: 'Trained a stance detection model, build a plattform to analyze top new headlinesand Twitter Posts in real-time, cluster topics and sentiment',
+        link: '',
+        img: '/projects/stance.png',
+        tags: ['Sentiment Analysis', 'Scraper', 'Full Stack'],
+        long: '',
+    },
+    {
+        id: 'algometer',
+        title: 'Algometer - Measure Algae in the water',
+        summary: 'Optical measurement of algae contamination and pollution of oil. Additionally measuring water flow rate, salt concentration and tempurature, communicating via LoRaWAN from the Northsea',
+        link: '',
+        img: '/projects/algometer.jpg',
+        tags: ['Embedded', 'Raspberry Pi', 'OpenCV'],
+        long: 'Optical measurement of algae contamination and pollution of oil. Additionally measuring water flow rate, salt concentration and tempurature, communicating via LoRaWAN from the Northsea',
+    },
+    {
+        id: 'chemiotho',
+        title: 'Chemiotho - Learn Chemistry',
+        summary: '3D Molecule Viewer, Quizzes: Play against friends over Internet and Bluetooth if no connection available',
+        link: '',
+        img: '/projects/chemiotho.png',
+        tags: ['Android Dev', 'Java'],
         long: '',
     }
 ]
