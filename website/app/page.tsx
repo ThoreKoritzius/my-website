@@ -88,7 +88,7 @@ export default function HomePage() {
             <h1 className="text-4xl font-extrabold">Thore Koritzius</h1>
             <p className="mt-2 text-gray-300">Machine Learning Software Engineer<br></br>Love designing, optimizing, and deploying real-time, scalable AI systems. Spanning LLMs, retrieval pipelines, and multimodal architectures.</p>
             <div className="mt-4 flex gap-3">
-              <IconLink href="https://www.linkedin.com/in/thorekoritzius">
+              <IconLink href="https://www.linkedin.com/in/thore-koritzius">
                 {/* LinkedIn SVG */}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.983 3.5C4.983 4.88071 3.88071 6 2.5 6C1.11929 6 0 4.88071 0 3.5C0 2.11929 1.11929 1 2.5 1C3.88071 1 4.983 2.11929 4.983 3.5Z" fill="currentColor" /><path d="M0 8.5H5V24H0V8.5Z" fill="currentColor" /><path d="M7.5 8.5H12.14V10.7H12.2C12.98 9.5 14.68 8.26 17.18 8.26C22.16 8.26 24 10.84 24 15.8V24H18.98V16.9C18.98 14.96 18.94 12.6 16.1 12.6C13.22 12.6 12.6 14.62 12.6 16.76V24H7.5V8.5Z" fill="currentColor" /></svg>
                 <span>LinkedIn</span>
